@@ -79,6 +79,16 @@
     display: none;
   }
 
+  .nav_list{
+    &:not(:last-child){
+      padding-right: .2rem;
+    }
+
+    &:nth-child(3){
+      padding-right: 1rem;
+    }
+  }
+
   .header{
     display: flex;
     flex-direction: column;
