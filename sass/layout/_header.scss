@@ -15,6 +15,7 @@
   &__nav {
     display: flex;
     border-radius: 100rem;
+    align-items: center;
     border: 1px solid $color-black;
     padding: 0.5rem;
     transition: all 0.4s ease;
