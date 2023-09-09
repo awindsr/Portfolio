@@ -1,0 +1,126 @@
+.header {
+  height: 8rem;
+  width: 100vw;
+  padding: 1rem 3rem;
+  display: flex;
+  // margin: 1rem;
+  justify-content: space-around;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: $color-dim-white;
+  z-index: 1000;
+
+  &__nav {
+    display: flex;
+    border-radius: 100rem;
+    border: 1px solid $color-black;
+    padding: 0.5rem;
+    transition: all 0.4s ease;
+  }
+
+  &__text {
+    display: inline-block;
+    padding: 1.5rem 4rem;
+  }
+
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
+.navTrigger {
+  display: none;
+}
+
+.popup-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Semi-transparent white background */
+  z-index: 1001; /* Ensure it's above other content */
+}
+
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+@include respond(tab-port) {
+  .popup-menu {
+    display: none;
+  }
+  .popup-menu.open {
+    display: block;
+  }
+  .popup-content {
+    text-align: center;
+    width: 80%;
+    display: flex;
+    flex-direction: column; /* Display items vertically */
+    gap: 10px;
+  }
+  .header__text {
+    display: none;
+  }
+
+  .header{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    &:not(:last-child){
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  // .header__nav {
+  //   display: none;
+  //   flex-direction: column;
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   height: 100%;
+  //   width: 100%;
+  //   background-color: white;
+  //   z-index: 1001;
+  // }
+
+  .navTrigger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .navTrigger i {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 6px auto;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #333; /* Adjust the color as needed */
+    outline: none;
+  }
+}

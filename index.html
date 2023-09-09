@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navTrigger = document.querySelector(".navTrigger");
+        const popupMenu = document.getElementById("popup-menu");
+        const closeButton = document.getElementById("close-button");
+        const popupLinks = document.querySelectorAll(".popup-content a");
+
+        navTrigger.addEventListener("click", function () {
+          togglePopupMenu();
+        });
+
+        closeButton.addEventListener("click", function () {
+          closePopupMenu();
+        });
+
+        function closePopupMenu() {
+          popupMenu.style.display = "none";
+        }
+
+        function togglePopupMenu() {
+          if (popupMenu.style.display === "block") {
+            closePopupMenu();
+          } else {
+            popupMenu.style.display = "block";
+          }
+        }
+
+        document.addEventListener("click", function (event) {
+          const isOutsidePopup =
+            !popupMenu.contains(event.target) &&
+            !navTrigger.contains(event.target);
+          if (isOutsidePopup) {
+            closePopupMenu();
+          }
+        });
+
+        // Add an event listener to close the popup when a link is clicked
+        popupLinks.forEach(function (link) {
+          link.addEventListener("click", function () {
+            closePopupMenu();
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__logo">
+        <p class="header__logo-text">Awindsr</p>
+      </div>
+      <div class="header__text">Open for offers and collaborations</div>
+      <div class="header__nav" id="header__nav">
+        <div class="nav_list btn btn--text">
+          <a href="#section-projects">Projects</a>
+        </div>
+        <div class="nav_list btn btn--text">
+          <a href="#section-about">About</a>
+        </div>
+        <div class="nav_list btn btn--text"><a href="#footer">Contact</a></div>
+        <div class="nav_list btn btn__colored--purple">
+          <a href="tel:919188684115">Let's talk</a>
+        </div>
+      </div>
+      <!-- <span class="navTrigger">
+        <i></i>
+        <i></i>
+        <i></i>
+      </span>
+      <div class="popup-menu" id="popup-menu">
+        <button class="close-button" id="close-button">×</button>
+        <div class="popup-content">
+          <div class="nav_list btn btn--text">
+            <a href="#section-projects">Projects</a>
+          </div>
+          <div class="nav_list btn btn--text">
+            <a href="#section-about"></a>About
+          </div>
+          <div class="nav_list btn btn--text">
+            <a href="#footer"></a>Contact
+          </div>
+          <div class="nav_list btn btn__colored--purple">
+            <a href="#">Let's talk</a>
+          </div>
+        </div>
+      </div> -->
+    </header>
+    <main>
+      <hero class="hero">
+        <div class="row hero__row">
+          <div class="col-1-of-3">
+            <p class="hero__description">Hello world!</p>
+            <button class="btn btn__colored--orange"><a href="./files/CV.pdf" download="Awindsr-cv.pdf" class="action-button"><i class="fa fa-download" style="font-size:24px;color:white"></i> Download CV</a></button>
+          </div>
+          <div class="col-1-of-3">
+            <img
+              class="hero__img"
+              src="./images/hero_img.svg"
+              alt="hero-image"
+            />
+          </div>
+          <div class="col-1-of-3 hero__icons">
+            <p class="hero__description">
+              I'm A UI/UX, <br />Web Developer<br />
+            </p>
+            <a href="https://github.com/awindsr"><img
+              class="hero__icons__icon"
+              src="./images/github.svg"
+              alt="github"
+            ></a>
+            <a href="https://www.linkedin.com/in/awindsr/"><img
+              class="hero__icons__icon"
+              src="./images/linkedin.svg"
+              alt="linkedin"
+            /></a>
+            <a href="mailto:awindsr@gmail.com"><img
+              class="hero__icons__icon"
+              src="images/gmail.svg"
+              alt="gmail"
+            /></a>
+          </div>
+        </div>
+      </hero>
+      <section class="section-skill-banner">
+        <div class="skill__banner-row">
+          <p class="skill__banner-text">
+            Frontend development Prototyping UI development Illustration
+          </p>
+        </div>
+        <div class="skill__banner-row">
+          <p class="skill__banner-text">
+            Illustration app development web development UX Research wireframes
+          </p>
+        </div>
+        <div class="skill__banner-row">
+          <p class="skill__banner-text">
+            Graphic design backend development 3d character design
+          </p>
+        </div>
+      </section>
+      <section class="section-about">
+        <div class="section__about-card id="section-about">
+          <div class="row about-row">
+            <div class="col-1-of-2 about-heading heading-secondary">
+              About Me.
+            </div>
+            <div class="col-1-of-2">
+              <p class="about-description">
+                I'm Awindas R, a dedicated individual hailing from Kerala,
+                India, with a strong passion for technology and creative
+                problem-solving. I thrive on challenges and have a track record
+                of effectively managing projects and fostering collaboration.
+                Currently pursuing a B. Tech in Computer Science and
+                Engineering, I combine my academic knowledge with practical
+                experience, having worked on various projects, from designing
+                responsive websites to developing efficient chatbots. Proficient
+                in multiple programming languages and equipped with a versatile
+                skill set, I am driven by a desire to make a meaningful impact
+                through innovation and design.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="section__about-card">
+          <div class="row about-row">
+            <div class="col-1-of-2 about-heading heading-secondary">
+              Skills.
+            </div>
+            <div class="col-1-of-2">
+              <p class="about-description">
+                I bring a robust set of technical skills to the table, spanning
+                both development and design domains. On the frontend, I am
+                proficient in HTML, CSS, JavaScript, and popular frameworks like
+                ReactJS, as well as CSS preprocessors like SASS. I have hands-on
+                experience with frontend libraries such as Bootstrap and
+                Tailwind CSS. In the backend realm, I have a strong command of
+                Python and Java. My expertise also extends to app development,
+                where I've worked on creating mobile applications. When it comes
+                to user interface (UI) development, I excel in crafting
+                intuitive and visually appealing interfaces. I'm well-versed in
+                UX research to ensure user-centric designs. Additionally, I have
+                a deep understanding of design tools, including Figma, which I
+                use for wireframing, prototyping, and creating design systems.
+                My background in illustration, utilizing tools like Blender,
+                allows me to add a creative touch to projects
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-projects" id="section-projects">
+        <div class="u-center-text u-margin-bottom-big">
+          <h2 class="heading-secondary">Projcets</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-1-of-3">
+            <div class="card">
+              <div class="card__side card__side--front">
+                <div class="card__picture card__picture--1">&nbsp;</div>
+                <h4 class="card__heading">
+                  <span class="card__heading-span card__heading-span--1"
+                    >Twitter sentiment analysis</span
+                  >
+                </h4>
+                <div class="card__details">
+                  <ul>
+                    <li>Data Analysis Techniques</li>
+                    <li>Geospatial Analysis Tools</li>
+                    <li>Statistical Software</li>
+                    <li>Data Visualization Tools</li>
+                    <li>Data Collection Platforms</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card__side card__side--back card__side--back-1">
+                <div class="card__cta">
+                  <div class="card-box">
+                    <p class="card-only">
+                      Dedicated to comprehending the concerning escalation of
+                      hate crimes within India, this project was undertaken with
+                      the aim of uncovering the intricate web of factors and
+                      trends contributing to these distressing incidents.
+                      Through the application of rigorous data analysis
+                      techniques, a deep dive into the available datasets was
+                      conducted to discern meaningful patterns, geographical
+                      hotspots, and potential triggers for these hate-driven
+                      actions.
+                    </p>
+                  </div>
+                  <a href="https://github.com/awindsr/Twitter-Sentiment-Analysis" class="btn btn__colored--white">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-1-of-3">
+            <div class="card">
+              <div class="card__side card__side--front">
+                <div class="card__picture card__picture--2">&nbsp;</div>
+                <h4 class="card__heading">
+                  <span class="card__heading-span card__heading-span--2"
+                    >Handricraft store landing page</span
+                  >
+                </h4>
+                <div class="card__details">
+                  <ul>
+                    <li>Handcrafted Beauty Showcase</li>
+                    <li>User-Friendly Design</li>
+                    <li>Art Enthusiasts' Gateway</li>
+                    <li>Timeless Craftsmanship</li>
+                    <li>Rich Heritage Display</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card__side card__side--back card__side--back-2">
+                <div class="card__cta">
+                  <div class="card-box">
+                    <p class="card-only">
+                      Capturing the essence of handcrafted beauty, our project showcases unique creations 
+                      through visually stunning and user-friendly design. Meticulous attention to detail and 
+                      a harmonious blend of aesthetics and functionality provide a gateway for art enthusiasts
+                       to explore handmade treasures. This landing page reflects rich heritage and invites visitors 
+                       to discover the timeless allure of artisanal craftsmanship.
+                    </p>
+                  </div>
+                  <a href="https://www.figma.com/file/XfUym9RmceAC1lBbwFS3s2/PCW-project?type=design&node-id=615%3A2116&mode=design&t=yMfsC1UwKw4h3wlP-1" class="btn btn__colored--white">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-1-of-3">
+            <div class="card">
+              <div class="card__side card__side--front">
+                <div class="card__picture card__picture--3">&nbsp;</div>
+                <h4 class="card__heading">
+                  <span class="card__heading-span card__heading-span--3"
+                    >Telegram Chatbot for Data Collection</span
+                  >
+                </h4>
+                <div class="card__details">
+                  <ul>
+                    <li>Custom Chatbot Development</li>
+                    <li>Streamlined Student Data Collection</li>
+                    <li>Automated User Interface</li>
+                    <li>Google Sheets Integration</li>
+                    <li>Enhanced Data Accuracy</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card__side card__side--back card__side--back-3">
+                <div class="card__cta">
+                  <div class="card-box">
+                    <p class="card-only">
+                      Designed and implemented a Telegram chatbot using Python
+                      to facilitate the efficient collection of student data for
+                      various events and activities. The chatbot served as an
+                      automated interface for participants, simplifying the data
+                      input process. By seamlessly integrating with Google
+                      Sheets, the collected data was instantly updated and
+                      organized, eliminating manual entry and improving data
+                      accuracy.
+                    </p>
+                  </div>
+                  <a href="https://github.com/awindsr/Gsheet-TG-Bot" class="btn btn__colored--white">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row bottom-row">
+          <div class="col-1-of-2-bottom-row">
+            <div class="card card-bottom">
+              <div class="card__side card__side--front">
+                <div class="card__picture card__picture--3">&nbsp;</div>
+                <h4 class="card__heading">
+                  <span class="card__heading-span card__heading-span--3"
+                    >portfolio <br> Website</span
+                  >
+                </h4>
+                <div class="card__details">
+                  <ul>
+                    <li>Responsive Design</li>
+                    <li>User-Friendly Navigation</li>
+                    <li>Professional Presentation</li>
+                    <li>Skill Emphasis</li>
+                    <li>Project Showcase</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card__side card__side--back card__side--back-3">
+                <div class="card__cta">
+                  <div class="card-box">
+                    <p class="card-only">
+                      The portfolio website has been meticulously crafted using
+                      HTML, CSS, SASS, and JavaScript, showcasing a trendy and
+                      aesthetic design. It serves as a platform for presenting
+                      professional work and skills, offering visitors an elegant
+                      and refined user experience. The website aims to provide a
+                      comprehensive showcase of the portfolio, reflecting a
+                      commitment to quality and creativity in web development.
+                    </p>
+                  </div>
+                  <a href="https://github.com/awindsr/awindsr.github.io" class="btn btn__colored--white">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-1-of-2-bottom-row">
+            <div class="card">
+              <div class="card__side card__side--front">
+                <div class="card__picture card__picture--2">&nbsp;</div>
+                <h4 class="card__heading">
+                  <span class="card__heading-span card__heading-span--2"
+                    >Expense manager telegram bot</span
+                  >
+                </h4>
+                <div class="card__details">
+                  <ul>
+                    <li>Streamlined Expense Tracking</li>
+                    <li>Comprehensive Financial Management</li>
+                    <li>Detailed Expense Summaries</li>
+                    <li>Easy to Use</li>
+                    <li>Convenient Telegram Integration</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card__side card__side--back card__side--back-2">
+                <div class="card__cta">
+                  <div class="card-box">
+                    <p class="card-only">
+                      The "Expense Manager Telegram Bot" is a user-friendly
+                      Python bot that simplifies expense tracking on Telegram.
+                      It lets users manage transactions, view expenses by
+                      category and month, and generates detailed summaries,
+                      making it an ideal tool for personal finance management
+                      within Telegram's familiar interface.
+                    </p>
+                  </div>
+                  <a href="https://github.com/awindsr/Expense-Manager-Telegram-bot" class="btn btn__colored--white">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="footer">
+      <div class="row">
+        <div class="col-1-of-2">
+          <h3>Get in touch</h3>
+          <p class="footer__text">
+            Want to get in touch? I wouldd love to hear from you. Here is how
+            you can reach me
+          </p>
+        </div>
+        <div class="col-1-of-2">
+          <h3>Contact me</h3>
+          <div class="footer__navigation">
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a href="https://github.com/awindsr" class="footer__link"
+                  ><img src="./images/github-footer.svg" alt=""
+                /></a>
+              </li>
+              <li class="footer__item">
+                <a href="https://linkedin.com/in/awindsr" class="footer__link"
+                  ><img src="./images/footer-linkedin.svg" alt=""
+                /></a>
+              </li>
+              <li class="footer__item">
+                <a href="mailto:awindsr@gmail.com" class="footer__link"
+                  ><img src="./images/footer-gmail.svg" alt=""
+                /></a>
+              </li>
+              <li class="footer__item">
+                <a href="https://www.instagram.com/iam_awin/" class="footer__link"
+                  ><img src="./images/footer-instagram.svg" alt=""
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__copyright">
+        <p>Copyright <a class="link-white" href="https://github.com/awindsr">Awindsr</a> 2023</p>
+      </div>
+    </footer>
+  </body>
+</html>
