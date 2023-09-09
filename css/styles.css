@@ -398,7 +398,8 @@ a {
   .header {
     display: flex;
     flex-direction: column;
-    height: auto; }
+    height: auto;
+    align-items: center; }
     .header:not(:last-child) {
       margin-bottom: 1.5rem; }
   .navTrigger {
